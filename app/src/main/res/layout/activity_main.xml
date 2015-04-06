@@ -9,7 +9,7 @@
     <TextView android:text="@string/app_title" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/app_title"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -23,7 +23,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="42dp"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <!-- User Input for Bill Amount -->
     <EditText
@@ -94,6 +94,7 @@
         android:id="@+id/taxDisplay"
         android:layout_below="@+id/calculateButton"
         android:layout_alignParentLeft="true"
+        android:textSize="20sp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="38dp" />
 
@@ -105,7 +106,7 @@
         android:id="@+id/finalDisplay"
         android:layout_marginTop="38dp"
         android:layout_below="@+id/taxDisplay"
-        android:layout_toRightOf="@+id/taxDisplay"
-        android:layout_toEndOf="@+id/taxDisplay" />
+        android:textSize="20sp"
+     />
 
 </RelativeLayout>

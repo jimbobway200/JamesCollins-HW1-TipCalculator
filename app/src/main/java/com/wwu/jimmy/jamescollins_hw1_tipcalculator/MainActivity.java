@@ -7,8 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
-
+import java.util.Formatter;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,39 +42,37 @@ public class MainActivity extends ActionBarActivity {
             {
                 try
                 {
+                    //Get Meal Price From User
                     String mealprice = myEditField.getText().toString();
-                    String answer = "";
-                    //if (mealprice.indexOf("$") == -1) {
-                    //    mealprice = "$" + mealprice;
-                    //}
-
-                    NumberFormat nf = java.text.NumberFormat.getCurrencyInstance();
-                    if (nf == null) {
-                        Log.i("", "NumberFormat is null");
-                    }
-                    float fmp = Float.parseFloat(mealprice);
-                   // fmp *= 2; //FMP should contain our Current Bill Amount
+                    float floatingMealPrice = Float.parseFloat(mealprice);
 
                     //Find out which checkbox is checked
                     RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-                    //int checkboxInt = radioGroup.indexOfChild(findViewById(radioGroup.getCheckedRadioButtonId()));
                     int id = radioGroup.getCheckedRadioButtonId();
+                    double taxPercent;
                     if (id == R.id.radioGroupButton0)
                     {
-                        taxAmount.setText("CHECKED");
+                        taxPercent = 0.15;
+                    }
+                    else if (id == R.id.radioGroupButton1)
+                    {
+                        taxPercent = 0.18;
+                    }
+                    else if (id == R.id.radioGroupButton2)
+                    {
+                        taxPercent = 0.20;
+                    }
+                    else
+                    {
+                        taxPercent = 0.0;
                     }
 
-
-                    answer = "Full Price:";// + nf.format(fmp);
-                    finalAmount.setText(answer);
+                    String taxString = "Tax Amount: $" + Math.floor((taxPercent * floatingMealPrice)*100)/100;
+                    String finalBillString = "Full Price: $" + Math.floor((floatingMealPrice + (taxPercent * floatingMealPrice))*100)/100;
+                    finalAmount.setText(finalBillString);
+                    taxAmount.setText(taxString);
                 }
-                //catch (java.text.ParseException pe) {
-                 //   Log.i("", "Parse exception caught");
-                 //   finalAmount.setText("Failed to parse amount?");
-                //}
                 catch (Exception e) {
-                    //Log.e("", "Failed to Calculate Tip:" + e.getMessage());
-                    //e.printStackTrace();
                     finalAmount.setText("Failed to Calculate Tip");
                 }
             }
