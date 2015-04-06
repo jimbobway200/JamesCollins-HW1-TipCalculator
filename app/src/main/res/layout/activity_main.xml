@@ -74,10 +74,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calculate"
-        android:id="@+id/button"
+        android:id="@+id/calculateButton"
         android:layout_below="@+id/radioGroup"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taxAmount"
+        android:id="@+id/taxDisplay"
+        android:layout_below="@+id/calculateButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finalAmount"
+        android:id="@+id/finalAmount"
+        android:layout_below="@+id/taxDisplay"
+        android:layout_toRightOf="@+id/taxDisplay"
+        android:layout_toEndOf="@+id/taxDisplay" />
 
 </RelativeLayout>

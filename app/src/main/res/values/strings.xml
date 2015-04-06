@@ -7,6 +7,8 @@
     <string name="percent15">15%</string>
     <string name="percent18">18%</string>
     <string name="percent20">20%</string>
+    <string name="taxAmount"> </string>
+    <string name="finalAmount"> </string>
     <string name="calculate">Calculate!</string>
 
 </resources>
