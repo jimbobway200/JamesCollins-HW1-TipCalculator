@@ -67,13 +67,14 @@ public class MainActivity extends ActionBarActivity {
                         taxPercent = 0.0;
                     }
 
-                    String taxString = "Tax Amount: $" + Math.floor((taxPercent * floatingMealPrice)*100)/100;
-                    String finalBillString = "Full Price: $" + Math.floor((floatingMealPrice + (taxPercent * floatingMealPrice))*100)/100;
+                    String taxString = "Tax Amount: $" + String.format("%.2f", (taxPercent * floatingMealPrice));
+                    String finalBillString = "Full Price: $" + String.format("%.2f", (floatingMealPrice + (taxPercent * floatingMealPrice)));
                     finalAmount.setText(finalBillString);
                     taxAmount.setText(taxString);
                 }
                 catch (Exception e) {
-                    finalAmount.setText("Failed to Calculate Tip");
+                    finalAmount.setText("Please Enter a valid bill total");
+                    taxAmount.setText(" ");
                 }
             }
         });
