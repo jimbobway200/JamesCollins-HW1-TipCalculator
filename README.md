@@ -6,11 +6,11 @@ collinj8@students.wwu.edu
 CS412 - Mobile Device Programming
 Week 2 Project
 
-Project Description
+##Project Description
 *******************
 Simple Tip Calculator
-
-Instructions
+    
+##Instructions
 *******************
  -Enter your Bill Amount
  -Select a Tip Percent Amount that you want to tip your waitor
